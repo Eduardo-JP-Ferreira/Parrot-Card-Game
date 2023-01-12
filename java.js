@@ -11,9 +11,11 @@ while(condicao === 0){
 
 //alert(`O numero de Cartas é: ${numCartas}`);
 //const listaCartas = ["Carta1","Carta2","Carta3","Carta4","Carta5","Carta6","Carta7"];
-let cartasDiferentes = numCartas/2;
-console.log(cartasDiferentes);
-for (let i=0; i<cartasDiferentes; i++){
+//console.log(numCartas);
+let listaCartas=[];
+for (let i=0; i<numCartas; i++){
     let remover = document.querySelector('.cartas').children[i];
     remover.classList.remove('escondido');
+    listaCartas.push(remover);
 }
+console.log(listaCartas);

@@ -10,11 +10,12 @@ h1{
 body{
     display: flex;
     justify-content: center;
+    background-color: #eef9bf;
 }
 .containerTotal{
     background-color: #eef9bf;
     width: 872px;
-    height: 600px;
+    height: 100%;
     display: flex; 
     flex-direction: column;
     align-items: center;
@@ -25,21 +26,15 @@ body{
     margin-top: 40px;
 }
 .containerTotal .cartas{
-    width: 700px;
-    height: 400px;
+    width: 872px;
+    height: 100%;
     margin-top: 47px;
-    background-color: lightblue;
+   /* background-color: lightblue;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.containerTotal .cartas div{
-    width: 117px;
-    height: 146px;
-    background-color: #A7E9AF;
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
+
 .containerTotal .cartas div img{
     width: 100px;
     height: 100px;
@@ -54,6 +49,36 @@ body{
 .escondido{
     display: none;
 }
-.verde{
-    
-}
+.card {
+    width: 117px;
+    height: 146px;
+    position: relative;
+    margin-right: 34px;
+    margin-bottom: 10px;
+  }
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+  }
+
+.back-face {
+    transform: rotateY(180deg);
+  }
+
+.card:hover .back-face {
+    transform: rotateY(0deg);
+  }
+
+.card:hover .front-face {
+    transform: rotateY(-180deg);
+  }
