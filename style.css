@@ -14,12 +14,46 @@ body{
 .containerTotal{
     background-color: #eef9bf;
     width: 872px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
+    height: 600px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
 }
-.containerTotal :first-child{
+.containerTotal .nomeJogo{
     width: 540px;
     height: 63px;
     margin-top: 40px;
+}
+.containerTotal .cartas{
+    width: 700px;
+    height: 400px;
+    margin-top: 47px;
+    background-color: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerTotal .cartas div{
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.containerTotal .cartas div img{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 22px;
+    margin-top: 24px;
+    margin-left: 10px;
+    margin-right: 7px;
+}
+.esconde{
+    display: none;
+}
+.escondido{
+    display: none;
+}
+.verde{
+    
 }
