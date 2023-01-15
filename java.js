@@ -34,12 +34,12 @@ cartasTemporaria.sort(comparador);
 for(i=0;i<numCartas;i++){
     let ul = document.querySelector(".cartas");
     ul.innerHTML += `
-    <li class="card" onclick="clicado(this)">
+    <li data-test="card" class="card" onclick="clicado(this)">
         <div class="front-face face">
-          <img  src="./img/back.png" alt="">
+          <img data-test="face-down-image" src="./img/back.png" alt="">
         </div>
         <div class="back-face face">
-         <img  src="./img/${cartasTemporaria[i]}" alt="">
+         <img data-test="face-up-image" src="./img/${cartasTemporaria[i]}" alt="">
         </div>
     </li>
     `;
