@@ -14,73 +14,79 @@ const todasAsCartas =[
     'tripletsparrot.gif',
     'tripletsparrot.gif',
     'explodyparrot.gif',
-    'explodyparrot.gif' 
+    'explodyparrot.gif'
 ];
 while(condicao === 0){
     numCartas = prompt("Com Quantas Cartas deseja jogar?");
     if(numCartas%2===0 && numCartas>3 && numCartas<15){
         condicao =1;
     }
-
 }
-console.log(todasAsCartas);
-console.log(todasAsCartas.length);
+
 
 let cartasTemporaria=[];
 
 for(let i=0;i<numCartas;i++){
     cartasTemporaria[i]= todasAsCartas[i];
 }
-console.log(cartasTemporaria);
-console.log(cartasTemporaria.length);
-
-/*
-let listaCartas=[];
-for (let i=0; i<numCartas; i++){
-    let remover = document.querySelector('.cartas').children[i];
-    console.log(remover);
-    
-    remover.classList.remove('escondido');
-    listaCartas.push(remover);
-
-}*/
-
 cartasTemporaria.sort(comparador);
-console.log("girou");
-console.log(cartasTemporaria);
-console.log(cartasTemporaria.length);
-
-let ul = document.querySelector(".cartas");
-console.log(ul);
-
-
 
 for(i=0;i<numCartas;i++){
     let ul = document.querySelector(".cartas");
     ul.innerHTML += `
-    <li class="card"> 
+    <li class="card" onclick="clicado(this)">
         <div class="front-face face">
           <img  src="./img/back.png" alt="">
         </div>
         <div class="back-face face">
          <img  src="./img/${cartasTemporaria[i]}" alt="">
         </div>
-    </li> 
+    </li>
     `;
 }
-console.log(ul);
+let contadorCliques=0;
+let carta1=undefined;
+let carta2=undefined;
+let contadorJogo=0;
+let contadorCartas=0;
+function clicado(cartaSelecionada){
+    if(contadorCliques===0){
+        cartaSelecionada.classList.add('selecionado');
+        carta1=cartaSelecionada;
+        contadorCliques++;
+        contadorCartas++;
+    }
+    else if(contadorCliques===1){
+        cartaSelecionada.classList.add('selecionado');
+        carta2=cartaSelecionada;
+        contadorCliques++;
+        contadorCartas++;
 
-function comparador() { 
-	return Math.random() - 0.5; 
+        if(carta1.innerHTML == carta2.innerHTML){
+            contadorCliques=0;
+            contadorJogo +=2;
+            verificarJogo();
+        }
+        else{
+            setTimeout(desvirar, 1000);
+        }
+    }
+}
+function verificarJogo(){
+    if(contadorJogo == numCartas){
+        setTimeout(fim, 350);
+    }
+}
+function fim(){
+    alert(`você ganhou em ${contadorCartas} jogadas!`);
+}
+function desvirar(){
+    carta1.classList.remove('selecionado');
+    carta2.classList.remove('selecionado');
+    contadorCliques=0;
+}
+function comparador() {
+	return Math.random() - 0.5;
 }
 
-/*              <li class="card"> 
-                    <div class="front-face face">
-                        <img  src="./img/back.png" alt="">
-                    </div>
-                    <div class="back-face face">
-                        <img  src="./img/bobrossparrot.gif" alt="">
-                    </div>
-                </li>
-                */
                

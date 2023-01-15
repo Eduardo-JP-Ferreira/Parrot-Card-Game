@@ -75,11 +75,11 @@ body{
     transform: rotateY(180deg);
   }
 
-.card:hover .back-face {
+.selecionado .back-face {
     transform: rotateY(0deg);
   }
 
-.card:hover .front-face {
+.selecionado .front-face {
     transform: rotateY(-180deg);
   }
 
