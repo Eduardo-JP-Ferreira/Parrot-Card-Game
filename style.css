@@ -20,11 +20,25 @@ body{
     display: flex; 
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .containerTotal .nomeJogo{
     width: 540px;
     height: 63px;
     margin-top: 40px;
+}
+.containerTotal .clockBox{
+    position: absolute;
+    right: 18px;
+    top: 16px;
+}
+.containerTotal .clockBox .clock{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -0.004em;
+    font-family: 'Roboto', sans-serif;
+    color: #86BD8D
 }
 .containerTotal .cartas{
     width: 100%;

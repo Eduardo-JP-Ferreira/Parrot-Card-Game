@@ -1,5 +1,6 @@
 let condicao = 0;
 let numCartas=0;
+
 const todasAsCartas =[ 
     'bobrossparrot.gif',
     'bobrossparrot.gif',
@@ -23,7 +24,8 @@ while(condicao === 0){
     }
 }
 
-
+let relogio =0;
+let tempo = setInterval(AumentaTempo, 1000);
 let cartasTemporaria=[];
 
 for(let i=0;i<numCartas;i++){
@@ -78,7 +80,23 @@ function verificarJogo(){
     }
 }
 function fim(){
-    alert(`você ganhou em ${contadorCartas} jogadas!`);
+    clearInterval(tempo);
+    alert(`Você ganhou em ${contadorCartas} jogadas! A duração do jogo foi de ${relogio} segundos!`);
+    reinicio();
+}
+let condicao2=0;
+let respostaReinicio;
+function reinicio(){
+    while(condicao2 === 0){
+        respostaReinicio = prompt("Deseja Jogar Novamente? Responda 'sim' ou'não'!");
+        if(respostaReinicio === 'sim'){
+            document.location.reload(true);
+            condicao2 =1;
+        }
+        else if(respostaReinicio === 'não'){
+            condicao2 =1;
+        }
+    }
 }
 function desvirar(){
     carta1.classList.remove('selecionado');
@@ -88,5 +106,9 @@ function desvirar(){
 function comparador() {
 	return Math.random() - 0.5;
 }
-
+function AumentaTempo(){
+    let valorRelogio = document.querySelector('.clock');
+    relogio++;
+    valorRelogio.innerHTML = relogio;
+}
                
