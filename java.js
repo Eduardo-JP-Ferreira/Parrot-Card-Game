@@ -65,6 +65,8 @@ function clicado(cartaSelecionada){
         contadorCartas++;
 
         if(carta1.innerHTML == carta2.innerHTML){
+            carta1.classList.add('naoClicavel');
+            carta2.classList.add('naoClicavel');
             contadorCliques=0;
             contadorJogo +=2;
             verificarJogo();
