@@ -90,7 +90,7 @@ let condicao2=0;
 let respostaReinicio;
 function reinicio(){
     while(condicao2 === 0){
-        respostaReinicio = prompt("Deseja Jogar Novamente? Responda 'sim' ou'não'!");
+        respostaReinicio = prompt("Deseja Jogar Novamente? Responda 'sim' ou 'não'!");
         if(respostaReinicio === 'sim'){
             document.location.reload(true);
             condicao2 =1;
